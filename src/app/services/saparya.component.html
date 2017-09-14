@@ -1,0 +1,23 @@
+<!-- <div class="container">
+            <img src="../logo.png" style="height:60px;">
+              </div>
+        <div>
+            <ul class="nav nav-tabs">
+                <li role="presentation" class="active"><a ui-sref="home">Home</a></li>
+                <li role="presentation"><a ui-sref="services">Services</a></li>
+                <li role="presentation"><a ui-sref="login">login</a></li>
+                <li role="presentation"><a ui-sref="#">Contact</a></li>
+            </ul>
+        </div>
+        <div ui-view>
+        </div>
+        <div class="global-footer">
+            <div class="col-xs-12 col-sm-12 col-md-12 clss_copy_foot">
+                <span>Copyright @ Swetha Alwaal</span>
+            </div>
+        </div> -->
+        <ul>
+            <li><a [routerLink] = "['/Product']">Product</a></li>
+            <li><a [routerLink] = "['/Inventory']">Inventory</a></li>
+         </ul>
+         <router-outlet></router-outlet>

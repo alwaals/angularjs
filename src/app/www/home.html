@@ -1,0 +1,84 @@
+    <div class="clss_search_page" ng-show="search">
+        <div id="slides_control" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example" data-slide-to="1"></li>
+                <li data-target="#carousel-example" data-slide-to="2"></li>
+                <li data-target="#carousel-example" data-slide-to="3"></li>
+                <li data-target="#carousel-example" data-slide-to="4"></li>
+            </ol>
+
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="img/caurosel.png">
+                </div>
+                <div class="item">
+                    <img src="img/caurosel5.png">
+                </div>
+                <div class="item">
+                    <img src="img/caurosel2.png">
+                </div>
+                <div class="item">
+                    <img src="img/caurosel4.png">
+                </div>
+                <div class="item">
+                    <img src="img/caurosel3.png">
+                </div>
+            </div>
+
+            <a class="left carousel-control" href="#carousel-example" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+
+        <form class="form-horizontal" ng-submit="GetStores()" role="form">
+            <div class="clss_search_opt" style="margin-bottom:2%">
+                <div class="form-group">
+                    <label for="carMake" class="col-sm-3 col-xs-12 control-label">Car Make</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <select id="gender" class="form-control" ng-model="reqObj.manufacturer" required oninvalid="this.setCustomValidity('Please select a Car Make')">
+                    <option value="">select</option>
+                    <option ng-repeat="make in makes" value="{{make.manufacturerName}}">{{make.manufacturerName}}</option>
+                </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="carModel" class="col-sm-3 col-xs-12 control-label">Car Model</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <select id="carModel" class="form-control" ng-model="reqObj.model" required oninvalid="this.setCustomValidity('Please select a Car Model')">
+                    <option value="">select</option>
+                    <option ng-repeat="model in models | filter : {manufacturerName: reqObj.manufacturer}: true" value="{{model.modelName}}">{{model.modelName}}</option>
+                </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="service" class="col-sm-3 col-xs-12 control-label">Services</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <select id="services" class="form-control" ng-model="reqObj.service" required oninvalid="this.setCustomValidity('Please select required Services')">
+                    <option value="">select</option>
+                    <option ng-repeat="service in services" value="{{service.eipDescription}}">{{service.serviceNameDisplay}}</option>
+                </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="location" class="col-sm-3 col-xs-12 control-label">Location</label>
+                    <div class="col-sm-9 col-xs-12">
+                        <div class="clss_loc">
+                            <input type="text" id="location" class="form-control" ng-model="reqObj.location" placeholder="location" required oninvalid="this.setCustomValidity('Please enter a valid location')" />
+                            <span style="float:right; padding:2% 2% 0 1%;" ng-click="getCurrentPosition()"> LocateMe</span>
+                            <span style="margin:2% 1% 1% 1%;float:right;border-left:1px solid gray;"> <span class="glyphicon glyphicon-map-marker" style="padding:3% 1% 0 3px;"> </span> </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-3 col-xs-12"></div>
+                    <div class="col-sm-9 col-xs-12">
+                        <input type="submit" value="Get Stores" class="form-control footer" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>

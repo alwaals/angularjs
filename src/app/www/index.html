@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <!-- <link rel="stylesheet" href="css/map.css"> -->
+    <title>Saparya</title>
+</head>
+
+<body ng-app="myapp" ng-controller="SearchCtrl" class="bg">
+    <div class="row header">
+
+        <span class="glyphicon glyphicon glyphicon-arrow-left" ng-show="!search" ng-click="searchpage()"></span>
+        <img src="img/logo.png" style="height:60px;">
+        <!-- <h4 style="display:inline">Spot Quote</h4> -->
+    </div>
+    <div>
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="active"><a ui-sref="home">Home</a></li>
+            <li role="presentation"><a ui-sref="services">Services</a></li>
+            <li role="presentation"><a ui-sref="login">login</a></li>
+            <li role="presentation"><a ui-sref="#">Contact</a></li>
+        </ul>
+    </div>
+    <div ui-view>
+    </div>
+    <div class="global-footer">
+        <div class="col-xs-12 col-sm-12 col-md-12 clss_copy_foot">
+            <span>Copyright @ CDK Trailblazers</span>
+        </div>
+    </div>
+
+
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
+    <script src="js/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script> -->
+    <script src="js/angular.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script> -->
+    <script src="js/angular-animate.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRB-IjLpRFpp40UiSe-JJm__eBnhP6G8U&libraries=places"></script> -->
+
+    <!-- <script src="http://maps.google.com/maps/api/js?sensor=false"></script> -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxhMD2bQi87aCXRL9C-c4kOcRZeviFlu4&libraries=places"></script>
+    <script src="https://rawgit.com/lodash/lodash/2.4.1/dist/lodash.underscore.min.js"></script>
+    <script src="https://rawgit.com/nlaplante/angular-google-maps/1.1.4/dist/angular-google-maps.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+     <script src="js/index.js"></script>
+</body>
+
+</html>
